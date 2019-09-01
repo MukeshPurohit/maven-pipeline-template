@@ -12,7 +12,8 @@ node {
       sonar()
    }
    stage('Code Quality - Gates checking') {
-      sonarGates()
+      //sonarGates()
+      quality-gates-jenkins()
    }
    
    stage('Packaging artifacts') {
