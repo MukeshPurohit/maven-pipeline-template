@@ -1,3 +1,5 @@
+library 'JSL'
+
 node {
    def mvnHome
    stage('Checkout app code') {
