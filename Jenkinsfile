@@ -19,8 +19,9 @@ node {
    stage('Packaging artifacts') {
       mvnPackage()
    }
-   
+   /*
    stage('Display Results') {
       mvnResultsSureFire()
    }
+   */
 }   
