@@ -12,6 +12,17 @@ node {
       sonar()
    }
    stage('Code Quality - Gates checking') {
+            properties( [
+          parameters([
+               string(name:'stringthing', defaultValue:'mary had a little lamb', description:'string')
+             ])
+         ] )
+
+      def _stringvalue = params.stringthing
+
+      paramEcho {
+          stringvalue = _stringvalue
+      }
       //sonarGates()
       quality-gates-jenkins()
    }
