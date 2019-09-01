@@ -1,8 +1,7 @@
 node {
    def mvnHome
-   stage('Preparation') {
-      git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-      mvnHome = tool 'M3'
+   stage('Checkout') {
+      fetchCode()
    }
    stage('Build') {
       withEnv(["MVN_HOME=$mvnHome"]) {
