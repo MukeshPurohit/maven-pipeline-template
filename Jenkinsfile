@@ -3,11 +3,15 @@ node {
    stage('Checkout') {
       fetchCode()
    }
-   
    stage('Packaging artifacts') {
       mvnPackage()
    }
-   /*
+   stage('Results') {
+      mvnResultsSureFire()
+   }
+   
+   
+/*
 stage('Build') {
       withEnv(["MVN_HOME=$mvnHome"]) {
          if (isUnix()) {
@@ -19,7 +23,7 @@ stage('Build') {
    }
 */
    
-   stage('Results') {
+   stage('Results again') {
       junit '**/target/surefire-reports/TEST-*.xml'
       archiveArtifacts 'target/*.jar'
    }
