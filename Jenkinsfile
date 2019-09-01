@@ -20,7 +20,7 @@ node {
 
       def _stringvalue = params.stringthing
 
-      paramEcho {
+      echo {
           stringvalue = _stringvalue
       }
       //sonarGates()
