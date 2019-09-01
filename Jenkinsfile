@@ -3,6 +3,9 @@ node {
    stage('Checkout app code') {
       fetchCode()
    }
+   stage('Code Quality') {
+      sonar()
+   }
    stage('Packaging artifacts') {
       mvnPackage()
    }
