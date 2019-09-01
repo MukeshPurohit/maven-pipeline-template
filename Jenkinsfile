@@ -20,11 +20,8 @@ node {
 
       def _stringvalue = params.stringthing
 
-      echo {
-          stringvalue = _stringvalue
-      }
       //sonarGates()
-      quality-gates-jenkins()
+      quality-gates-jenkins(_stringvalue)
    }
    
    stage('Packaging artifacts') {
