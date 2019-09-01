@@ -1,15 +1,16 @@
 node {
    def mvnHome
-   stage('Checkout') {
+   stage('Checkout app code') {
       fetchCode()
    }
    stage('Packaging artifacts') {
       mvnPackage()
    }
-   stage('Results') {
+   
+   stage('Display Results') {
       mvnResultsSureFire()
    }
-   
+}
    
 /*
 stage('Build') {
@@ -23,8 +24,3 @@ stage('Build') {
    }
 */
    
-   stage('Results again') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archiveArtifacts 'target/*.jar'
-   }
-}
