@@ -3,6 +3,9 @@ node {
    stage('Checkout app code') {
       fetchCode()
    }
+   stage('Checkout app code') {
+      mvnTest()
+   }
    stage('Code Quality') {
       sonar()
    }
