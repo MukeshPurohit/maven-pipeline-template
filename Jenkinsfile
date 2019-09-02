@@ -13,7 +13,7 @@ node {
 		refs = myInput.DEMO3
 	}
 println "******************"	
-println "myInput.DEMO3"
+println myInput.DEMO3
 println "******************"
 /*
 node {
