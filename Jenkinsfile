@@ -2,16 +2,18 @@ library 'JSL'
 
 properties([parameters([string(defaultValue: "refs/heads/master", description: "Git Rository URL", name: 'GitCheckout')])])
 
+def myInput = input message: 'Enter parameters', parameters: [string(defaultValue: '', description: '', name: 'DEMO1'), string(defaultValue: '', description: '', name: 'DEMO2'), string(defaultValue: '', description: '', name: 'DEMO3')]
+
 
 node {
 	dryrun{
 		repo = 'test1'
 		folder = 'test2'
 		submodules = true
-		refs = ${params.GitCheckout}
+		refs = myInput.DEMO3
 	}
 println "******************"	
-println ${params.GitCheckout}
+println "myInput.DEMO3"
 println "******************"
 /*
 node {
