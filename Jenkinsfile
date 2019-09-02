@@ -14,8 +14,9 @@ node {
 		submodules = true
 		refs = params.GitCheckout
 	}
-
-
+println "******************"	
+println params.GitCheckout
+println "******************"
 /*
 node {
    def mvnHome
