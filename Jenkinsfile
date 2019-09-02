@@ -1,21 +1,29 @@
 library 'JSL'
 
 //properties([parameters([string(defaultValue: "", description: "Git Rository URL", name: 'gitRepoURL')])])
-def a1 = params.GitCheckout
-dryrun ([
-    repo = 'test1'
-    folder = 'test2'
-    submodules = true
-    refs = a1
+properties([
+	parameters(
+		[string(name: 'GitCheckout', defaultValue: 'refs/heads/master', description: '') ]
+	)
 ])
 
+node {
+	dryrun{
+		repo = 'test1'
+		folder = 'test2'
+		submodules = true
+		refs = params.GitCheckout
+	}
+
+}
+/*
 node {
    def mvnHome
    stage('Checkout app code') {
     //dryrun.test('unit','junk')
     //dryrun.test('unit', parallel = 'no')
    }
-/*
+
 stage('Checkout app code') {
       mvnTest()
    }
