@@ -10,11 +10,9 @@ node {
 		repo = 'test1'
 		folder = 'test2'
 		submodules = true
-		a = refs
+		refs = refs
 	}
-println "******************"	
-println params.GitCheckout
-println "******************"
+
 /*
 node {
    def mvnHome
