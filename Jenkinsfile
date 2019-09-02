@@ -15,7 +15,7 @@ node {
 		refs = params.GitCheckout
 	}
 
-}
+
 /*
 node {
    def mvnHome
