@@ -4,16 +4,16 @@ properties([parameters([string(defaultValue: 'refs/heads/master', description: '
 
 def myInput = input message: 'Enter parameters', parameters: [string(defaultValue: '', description: '', name: 'DEMO1'), string(defaultValue: '', description: '', name: 'DEMO2'), string(defaultValue: '', description: '', name: 'DEMO3')]
 
-
+def refs = params.GitCheckout
 node {
 	dryrun{
 		repo = 'test1'
 		folder = 'test2'
 		submodules = true
-		refs = params.GitCheckout
+		a = params.refs
 	}
 println "******************"	
-//println params.GitCheckout
+println params.GitCheckout
 println "******************"
 /*
 node {
