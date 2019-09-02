@@ -4,8 +4,8 @@ library 'JSL'
 node {
    def mvnHome
    stage('Checkout app code') {
-    dryRun.test('unit','junk')
-    dryRun.test('unit', parallel = 'no')
+    dryrun.test('unit','junk')
+    dryrun.test('unit', parallel = 'no')
    }
 /*
 stage('Checkout app code') {
