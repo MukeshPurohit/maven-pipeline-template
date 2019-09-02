@@ -10,10 +10,10 @@ node {
 		repo = 'test1'
 		folder = 'test2'
 		submodules = true
-		refs = myInput.DEMO3
+		refs = params.GitCheckout
 	}
 println "******************"	
-println params.GitCheckout
+//println params.GitCheckout
 println "******************"
 /*
 node {
