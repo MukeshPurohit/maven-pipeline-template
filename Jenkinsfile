@@ -1,7 +1,7 @@
 library 'JSL'
 
-properties([parameters([string(defaultValue: 'https://github.com/jglick/simple-maven-project-with-tests.git', description: 'Enter Git Rository URL', name: 'GitURL')])])
-properties([parameters([string(defaultValue: 'refs/heads/master', description: 'Checkout Type', name: 'GitCheckoutType')])])
+properties([parameters([string(defaultValue: 'https://github.com/jglick/simple-maven-project-with-tests.git', description: 'Enter Git Rository URL', name: 'GitURL'),
+string(defaultValue: 'refs/heads/master', description: 'Checkout Type', name: 'GitCheckoutType')])])
 
 //def myInput = input message: 'Enter parameters', parameters: [string(defaultValue: '', description: '', name: 'DEMO1'), string(defaultValue: '', description: '', name: 'DEMO2'), string(defaultValue: '', description: '', name: 'DEMO3')]
 
