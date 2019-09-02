@@ -1,11 +1,7 @@
 library 'JSL'
 
-//properties([parameters([string(defaultValue: "", description: "Git Rository URL", name: 'gitRepoURL')])])
-properties([
-	parameters(
-		[string(name: 'GitCheckout', defaultValue: 'refs/heads/master', description: '') ]
-	)
-])
+properties([parameters([string(defaultValue: "refs/heads/master", description: "Git Rository URL", name: 'GitCheckout')])])
+
 
 node {
 	dryrun{
