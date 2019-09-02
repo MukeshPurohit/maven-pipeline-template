@@ -2,7 +2,7 @@ library 'JSL'
 
 properties([parameters([string(defaultValue: 'refs/heads/master', description: 'Git Rository URL', name: 'GitCheckout')])])
 
-def myInput = input message: 'Enter parameters', parameters: [string(defaultValue: '', description: '', name: 'DEMO1'), string(defaultValue: '', description: '', name: 'DEMO2'), string(defaultValue: '', description: '', name: 'DEMO3')]
+//def myInput = input message: 'Enter parameters', parameters: [string(defaultValue: '', description: '', name: 'DEMO1'), string(defaultValue: '', description: '', name: 'DEMO2'), string(defaultValue: '', description: '', name: 'DEMO3')]
 
 def refs = params.GitCheckout
 node {
@@ -10,7 +10,7 @@ node {
 		repo = 'test1'
 		folder = 'test2'
 		submodules = true
-		a = params.refs
+		a = refs
 	}
 println "******************"	
 println params.GitCheckout
