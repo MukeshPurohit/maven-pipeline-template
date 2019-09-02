@@ -1,9 +1,10 @@
-properties([parameters([string(defaultValue: "", description: "Git Rository URL", name: 'gitRepoURL')])])
+//properties([parameters([string(defaultValue: "", description: "Git Rository URL", name: 'gitRepoURL')])])
+def a1 = params.GitCheckout
 dryrun ([
-  repo: 'test1',
-  folder: 'test2',
-  submodules: true,
-  refs = params.GitCheckout
+    repo = 'test1'
+    folder = 'test2'
+    submodules = true
+    refs = a1
 ])
 library 'JSL'
 
