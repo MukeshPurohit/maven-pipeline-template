@@ -1,3 +1,5 @@
+library 'JSL'
+
 //properties([parameters([string(defaultValue: "", description: "Git Rository URL", name: 'gitRepoURL')])])
 def a1 = params.GitCheckout
 dryrun ([
@@ -6,7 +8,6 @@ dryrun ([
     submodules = true
     refs = a1
 ])
-library 'JSL'
 
 node {
    def mvnHome
