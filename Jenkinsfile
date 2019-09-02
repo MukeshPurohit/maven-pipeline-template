@@ -1,15 +1,15 @@
 library 'JSL'
 
-properties([parameters([string(defaultValue: 'refs/heads/master', description: 'Git Rository URL', name: 'GitCheckout')])])
+properties([parameters([string(defaultValue: 'https://github.com/jglick/simple-maven-project-with-tests.git', description: 'Enter Git Rository URL', name: 'GitURL')])])
+properties([parameters([string(defaultValue: 'refs/heads/master', description: 'Checkout Type', name: 'GitCheckoutType')])])
 
 //def myInput = input message: 'Enter parameters', parameters: [string(defaultValue: '', description: '', name: 'DEMO1'), string(defaultValue: '', description: '', name: 'DEMO2'), string(defaultValue: '', description: '', name: 'DEMO3')]
 
-def refs = params.GitCheckout
+def gitRepo = params.GitURL
+def refs = params.GitCheckoutType
 node {
 	dryrun{
-		repo = 'test1'
-		folder = 'test2'
-		submodules = true
+		repo = gitRepo
 		references = refs
 	}
 
