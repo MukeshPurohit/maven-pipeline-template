@@ -10,7 +10,7 @@ node {
 		repo = 'test1'
 		folder = 'test2'
 		submodules = true
-		refs = refs
+		references = refs
 	}
 
 /*
